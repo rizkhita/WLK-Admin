@@ -1,0 +1,23 @@
+<?php
+	
+	include "koneksi.php";
+	if(isset($_POST["submitee"])){
+
+		$x=$_POST['no'];		
+		$a=$_POST['id_pas'];
+		$b=$_POST['kode_periksa'];
+		$dok=$_POST['dok'];
+		$e=$_POST['tgl'];
+			$c=$_POST['golongan'];
+			$d=$_POST['rhesus'];
+			
+			
+			$QUERY="INSERT INTO endokrin SET no='$x',id_pas='$a',kode_periksa='$b',dok='$dok',tgl='$e',T4='$c',T3='$d'";
+
+		mysql_query($QUERY) or die (error_reporting());
+		header("location: endokrin_v.php");
+	}else{
+		die('gagal');
+	}
+
+?>
